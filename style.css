@@ -7,21 +7,32 @@
   border: 1px solid grey;
 }
 
-#gridButton {
-  display: block;
-  margin: auto;
+body{
+  background-color: rgb(50, 150, 256);
+}
+
+h1 {
+    text-align: center;
+}
+
+.buttons {
   margin-top: 50px;
+  text-align: center;
+  font-weight: bold;
+}
+
+#randomButton{
+  background-color: rgb(256, 0, 0);
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+button {
+  margin: 0 10px;
 }
 
 .field {
   float: left;
-  margin: 1px;
-}
-
-.normal {
+  border: 1px solid white;
   background-color: black;
-}
-
-.highligth {
-  background-color: red;
 }

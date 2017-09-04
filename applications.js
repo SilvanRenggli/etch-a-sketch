@@ -1,15 +1,31 @@
 function main(){
   mkGrid(16);
+  var mousedown = false;
+  color = 'rgb(256, 0, 0)';
   $("#gridButton").on('click', function(){
-    var gridVal = prompt("Size of the grid:", 16);
+    do{
+    var gridVal = prompt("Size of the grid (between 1 and 42):", 16);
+  }while(gridVal < 1 || gridVal >42)
     $('.row').remove();
     mkGrid(gridVal);
   });
-  $('#grid').on('mouseenter', '.field',function(){
-    console.log('hover');
-    $(this).removeClass('normal');
-    $(this).addClass('highligth');
+  $("#clearButton").on('click', function(){
+    $('.field').css('background-color', 'black');
   });
+  $("#randomButton").on('click', function(){
+    var red = Math.floor(Math.random() * 257);
+    var green = Math.floor(Math.random() * 257);
+    var blue = Math.floor(Math.random() * 257);
+    color = 'rgb(' + red + ',' + green + ',' + blue + ')';
+    $('#randomButton').css('background-color', color);
+  });
+  $('#grid').on('mouseenter', '.field',function(){
+    if(mousedown){
+    $(this).css('background-color', color);
+    }
+  });
+  $('body').on('mousedown', function(){mousedown = true});
+  $('body').on('mouseup', function(){mousedown = false});
 }
 
 function mkGrid(gridVal){
@@ -20,7 +36,6 @@ function mkGrid(gridVal){
     grid.append(list);
     for(var j = 0; j < gridVal; j++){
       var field = $('<div class=\"field\"></div>');
-        field.addClass('normal');
       list.append(field);
     }
   }
