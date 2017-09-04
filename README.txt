@@ -1,0 +1,1 @@
+In this Project I designed a simple etch a sketch webpage, in order to get better with html, css and jQuery.
