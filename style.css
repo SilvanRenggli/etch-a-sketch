@@ -1,0 +1,27 @@
+
+#grid {
+  height: 400px;
+  width: 400px;
+  margin: auto;
+  margin-top: 50px;
+  border: 1px solid grey;
+}
+
+#gridButton {
+  display: block;
+  margin: auto;
+  margin-top: 50px;
+}
+
+.field {
+  float: left;
+  margin: 1px;
+}
+
+.normal {
+  background-color: black;
+}
+
+.highligth {
+  background-color: red;
+}
